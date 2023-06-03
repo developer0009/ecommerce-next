@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Wrapper from "./Wrapper";
+import { logo } from "@/public";
 import Link from "next/link";
 import Menu from "./Menu";
 import { BsCart } from "react-icons/bs";
@@ -20,8 +21,8 @@ const Header = () => {
     >
       <Wrapper className={"flex items-center justify-between "}>
         <Link href={"/"}>
-          <img
-            src="/logo.svg"
+          <Image
+            src={logo}
             alt="ecommerce shoes store"
             className="w-[40px] md:w-[60px]"
           />
