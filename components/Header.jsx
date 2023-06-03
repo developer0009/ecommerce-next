@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Wrapper from "./Wrapper";
+import { useEffect } from "react";
+import Image from "next/image";
+import { logo } from "@/public";
 import Link from "next/link";
 import Menu from "./Menu";
 import { BsCart } from "react-icons/bs";
@@ -13,6 +16,26 @@ const Header = () => {
   const [show, setShow] = useState("translate-y-0");
   const [lastScrollY, setLastScrollY] = useState(0);
   const [categories, setCategories] = useState(null);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 200) {
+      if (window.scrollY > lastScrollY && !mobileMenu) {
+        setShow("-translate-y-[80px]");
+      } else {
+        setShow("shadow-sm");
+      }
+    } else {
+      setShow("translate-y-0");
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
   return (
     <div
       className={`w-full h-[50px] md:h-[80px] bg-white z-20 sticky top-0 transition-transform duration-300 flex justify-center items-center ${show} `}
@@ -20,8 +43,8 @@ const Header = () => {
     >
       <Wrapper className={"flex items-center justify-between "}>
         <Link href={"/"}>
-          <img
-            src="/logo.svg"
+          <Image
+            src={logo}
             alt="ecommerce shoes store"
             className="w-[40px] md:w-[60px]"
           />
