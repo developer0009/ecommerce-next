@@ -8,7 +8,7 @@ const MobileMenu = ({
   MobileMenu,
   setMobileMenu,
 }) => {
-  console.log(showCatMenu);
+  // console.log(showCatMenu);
   const data = [
     { id: 1, name: "Home", url: "/" },
     { id: 2, name: "About", url: "/about" },

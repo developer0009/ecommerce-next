@@ -1,7 +1,12 @@
 import React from "react";
-import Header from "@/components/Header";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import BannerSlide from "@/components/BannerSlide";
 const Home = () => {
-  return <></>;
+  return (
+    <>
+      <BannerSlide />
+    </>
+  );
 };
 
 export default Home;

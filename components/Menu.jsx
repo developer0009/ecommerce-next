@@ -3,7 +3,7 @@ import React from "react";
 import { BsChevronDown, BsCart } from "react-icons/bs";
 
 const Menu = ({ showCatMenu, setShowCatMenu }) => {
-  console.log(showCatMenu);
+  // console.log(showCatMenu);
   const data = [
     { id: 1, name: "Home", url: "/" },
     { id: 2, name: "About", url: "/about" },
@@ -34,7 +34,7 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
               {item.name} <BsChevronDown size={14} className="mt-[2px]" />
               {showCatMenu && (
                 <ul
-                  className="absolute   top-6 min-w-[250px] left-0 shadow-lg p-1"
+                  className="absolute   top-6 min-w-[250px] left-0 shadow-lg p-1 bg-white"
                   // style={{ border: "2px solid black" }}
                 >
                   {subMenuData.map((data, index) => (

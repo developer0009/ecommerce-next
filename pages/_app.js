@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import "@/styles/globals.css";
 import Head from "next/head";
+import Footer from "@/components/Footer";
 export default function App({ Component, pageProps }) {
   return (
     <>
@@ -18,7 +19,9 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Header />
+      {/* <div className="h-[2000px]"></div> */}
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }
