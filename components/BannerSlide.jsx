@@ -80,7 +80,7 @@ const BannerSlide = () => {
           <ProductCard src={4} />
           <ProductCard src={5} />
           <ProductCard src={6} />
-          <ProductCard src={7} />
+          {/* <ProductCard src={7} /> */}
         </div>
       </Wrapper>
     </>
